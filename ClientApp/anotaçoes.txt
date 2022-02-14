@@ -1,0 +1,4 @@
+﻿pra aula 23 - api 
+npm install json-server
+em stcripts do package.json: 
+    "backend": "json-server --watch db.json --port 5000"

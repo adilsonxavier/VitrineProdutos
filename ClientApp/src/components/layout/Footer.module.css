@@ -1,0 +1,29 @@
+﻿footer{
+   background-color:#222;
+   text-align:center;
+   color:#fff;
+}
+.list {
+    display: flex;
+    list-style: none;
+    justify-content:center;
+    align-items: center;
+    color:#fff;
+}
+.list li {
+    font-size:2em;
+    color:#fff;
+    margin-right:1em;
+    cursor:pointer;
+}
+    .list li:hover {
+
+        color: #fb3;
+    }
+    .copyright{
+        margin-top:2em;
+    }
+        .copyright span {
+            font-weight:bold;
+            color: #fb3;
+        }

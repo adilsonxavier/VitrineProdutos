@@ -103,6 +103,7 @@ namespace VitrineProdutos.Controllers
         {
             // var a = foto;
             foto.ImageName = await SaveImage(foto.ImageFile);
+           // foto.ImageName = "teste cors";
             foto.Position = nextFoto(foto.ProdutoId);
             _context.Fotos.Add(foto);
             await _context.SaveChangesAsync();
@@ -153,12 +154,20 @@ namespace VitrineProdutos.Controllers
             // Depois adiciona a data com milisegundos e adiciona a extensão ( veja que não preciso concatenar o ponto )
             imageName = imageName + DateTime.Now.ToString("yyyymmddssfff") + Path.GetExtension(imageFile.FileName);
 
-            var imagePath = Path.Combine(_hostEnvironment.ContentRootPath, "images", imageName);
+            var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "images", imageName);
 
-            using (var fileStream = new FileStream(imagePath, FileMode.Create))
+            try
             {
-                await imageFile.CopyToAsync(fileStream);
+                using (var fileStream = new FileStream(imagePath, FileMode.Create))
+                {
+                    await imageFile.CopyToAsync(fileStream);
+                   // imageName = "upload ok ";
+                }
+            }catch(Exception ex)
+            {
+                imageName = $"erro no upload: {ex.Message}";
             }
+
             return imageName;
         }
 

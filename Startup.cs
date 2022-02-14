@@ -77,12 +77,12 @@ namespace VitrineProdutos
                 .AllowAnyMethod()
                 .AllowAnyHeader()
             );
-            if (env.IsDevelopment())
-            {
+            //if (env.IsDevelopment())
+            //{
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "VitrineProdutos v1"));
-            }
+                //app.UseSwagger();
+                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "VitrineProdutos v1"));
+           // }
 
             //Permitir ler os arquivos da pasta images
             app.UseStaticFiles(new StaticFileOptions

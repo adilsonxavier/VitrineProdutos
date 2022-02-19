@@ -78,14 +78,14 @@ namespace VitrineProdutos.Controllers
         //[Authorize]
         public async Task<ActionResult<Produto>> GetProdutos(int id)
         {
-            var employee = await _context.Produtos.FindAsync(id);
+            var produto = await _context.Produtos.FindAsync(id);
 
-            if (employee == null)
+            if (produto == null)
             {
                 return NotFound();
             }
 
-            return employee;
+            return produto;
         }
 
 
@@ -162,7 +162,7 @@ namespace VitrineProdutos.Controllers
 
             return new JsonResult(produto);
 
-            // return CreatedAtAction("GetProdutos", new { id = employee.ProdutosId }, employee);
+            // return CreatedAtAction("GetProdutos", new { id = produto.ProdutosId }, produto);
 
             // Obs : se por o nome errado do método "GetProdutos" da erro 500 de servidor no postman mas o objeto é alimentado
             // no banco mesmo assim
@@ -173,8 +173,8 @@ namespace VitrineProdutos.Controllers
         [Authorize]
         public async Task<IActionResult> DeleteProduto(int id)
         {
-            var employee = await _context.Produtos.FindAsync(id);
-            if (employee == null)
+            var produto = await _context.Produtos.FindAsync(id);
+            if (produto == null)
             {
                 return NotFound();
             }
@@ -183,10 +183,10 @@ namespace VitrineProdutos.Controllers
             //******* Fazer rotina para deletar todas as fotos do produto de uma vez ************/
             //***********************************************************************************/
 
-           // DeleteImage(employee.ImageName); // Posso deletar direto sem checar se existe a imagem
+           // DeleteImage(produto.ImageName); // Posso deletar direto sem checar se existe a imagem
 
 
-            _context.Produtos.Remove(employee);
+            _context.Produtos.Remove(produto);
             await _context.SaveChangesAsync();
 
             return NoContent();

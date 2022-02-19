@@ -24,10 +24,14 @@ namespace VitrineProdutos.Models
 
         [Column(TypeName = "nvarchar(200)")]
         public string ProdutoDescricao { get; set; }
+        
         [Required]
         public decimal ProdutoValor { get; set; }
 
-       
+        [Column(TypeName = "decimal(10,2)")]
+        public decimal ProdutoValorAntigo { get; set; }
+
+
         public virtual ICollection<ProdutoCategoria> ProdutoCategorias { get; set; }
 
 

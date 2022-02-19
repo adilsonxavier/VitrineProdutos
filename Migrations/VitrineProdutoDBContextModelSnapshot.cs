@@ -77,6 +77,9 @@ namespace VitrineProdutos.Migrations
                     b.Property<decimal>("ProdutoValor")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<decimal>("ProdutoValorAntigo")
+                        .HasColumnType("decimal(10,2)");
+
                     b.HasKey("ProdutoId");
 
                     b.ToTable("Produtos");

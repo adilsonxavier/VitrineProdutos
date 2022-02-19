@@ -9,8 +9,8 @@ using VitrineProdutos.Models;
 namespace VitrineProdutos.Migrations
 {
     [DbContext(typeof(VitrineProdutoDBContext))]
-    [Migration("20220201145745_inicial")]
-    partial class inicial
+    [Migration("20220219044220_prodvalorantigo3")]
+    partial class prodvalorantigo3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -69,9 +69,6 @@ namespace VitrineProdutos.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoriaId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ProdutoDescricao")
                         .HasColumnType("nvarchar(200)");
 
@@ -81,6 +78,9 @@ namespace VitrineProdutos.Migrations
 
                     b.Property<decimal>("ProdutoValor")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ProdutoValorAntigo")
+                        .HasColumnType("decimal(10,2)");
 
                     b.HasKey("ProdutoId");
 

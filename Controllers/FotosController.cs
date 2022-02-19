@@ -33,7 +33,7 @@ namespace VitrineProdutos.Controllers
 
         //[Route("[action]", Name = "GetFotosProduto")]
         [Route("[action]/{id}")]
-        [Authorize]
+        //[Authorize]
         public async Task<ActionResult<IEnumerable<Foto>>> GetFotosProduto(int id)
         {
             return await _context.Fotos.Where(x => x.ProdutoId == id).OrderBy(x => x.Position)

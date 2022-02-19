@@ -27,7 +27,7 @@ namespace VitrineProdutos.Controllers
 
         // GET: api/Produtos
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public async Task<ActionResult<IEnumerable<Produto>>> GetProdutos()
         {
             return await _context.Produtos
@@ -49,7 +49,7 @@ namespace VitrineProdutos.Controllers
     
         [Route("[action]/{currentPage}/{pageSiza}")]
         [Route("[action]/{currentPage}/{pageSiza}/{palavraChave}")]
-        [Authorize]
+        //[Authorize]
         //[Route("[action]")]
         public async Task<ActionResult<IEnumerable<Produto>>> GetProdutosPaginacao(int currentPage,int pageSiza, string palavraChave = "")
         {
@@ -75,7 +75,7 @@ namespace VitrineProdutos.Controllers
 
         // GET: api/Produtos/5
         [HttpGet("{id}")]
-        [Authorize]
+        //[Authorize]
         public async Task<ActionResult<Produto>> GetProdutos(int id)
         {
             var employee = await _context.Produtos.FindAsync(id);
@@ -149,6 +149,7 @@ namespace VitrineProdutos.Controllers
         // POST: api/Produtos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Produto>> PostProdutos([FromForm] Produto produto) // Com o fromform no postman tem que usar form-data
         {
            

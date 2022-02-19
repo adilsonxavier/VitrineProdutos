@@ -125,7 +125,7 @@ namespace VitrineProdutos.Controllers
         }
 
         [Route("[action]/{id}")]
-        [Authorize]
+        //[Authorize]
         public async Task<ActionResult<IEnumerable<Categoria>>> GetCategoriasProduto(int id)
         {
             /* return await _context.CategoriaProdutos

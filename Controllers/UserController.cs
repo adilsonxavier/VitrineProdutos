@@ -27,7 +27,12 @@ namespace VitrineProdutos.Controllers
 
             // Verifica se o usuário existe
             if (user == null)
-                 return NotFound(new { message = "Usuário ou senha inválidos" });
+                return new
+                {
+                    mensagem = "Usuário ou senha inválidos",
+                    token =""
+                };
+           // return NotFound(new { message = "Usuário ou senha inválidos" });
               //  return BadRequest(,);
 
             // Gera o Token
@@ -39,6 +44,7 @@ namespace VitrineProdutos.Controllers
             // Retorna os dados
             return new
             {
+                mensagem = "ok",
                 token = token
             };
         }

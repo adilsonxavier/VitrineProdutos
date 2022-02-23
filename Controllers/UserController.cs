@@ -18,8 +18,7 @@ namespace VitrineProdutos.Controllers
         [HttpPost]
         [Route("login")]
         [AllowAnonymous]
-        //[HttpPut("{id}")]
-        // public async Task<ActionResult<dynamic>> Authenticate([FromBody] User model) // o dynamic é por que o método pode retornar mais de um tipo diferente
+     
         public async Task<ActionResult<dynamic>> Authenticate([FromBody]  User model) // o dynamic é por que o método pode retornar mais de um tipo diferente
         {
             // Recupera o usuário
@@ -32,8 +31,7 @@ namespace VitrineProdutos.Controllers
                     mensagem = "Usuário ou senha inválidos",
                     token =""
                 };
-           // return NotFound(new { message = "Usuário ou senha inválidos" });
-              //  return BadRequest(,);
+
 
             // Gera o Token
             var token = TokenService.GenetateToken(user);
@@ -94,6 +92,6 @@ namespace VitrineProdutos.Controllers
         [Route("manager")]
         [Authorize(Roles = "manager")]
         public string Manager() => "Gerente";
-        // Se o usuário autenticado não tiver o hoje Manager, o status retorna 403 - Forbidden
+        // Se o usuário autenticado não tiver o role Manager, o status retorna 403 - Forbidden
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VitrineProdutos.Models;
 
 namespace VitrineProdutos.Migrations
 {
     [DbContext(typeof(VitrineProdutoDBContext))]
-    partial class VitrineProdutoDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220222155259_increaseprodutonome")]
+    partial class increaseprodutonome
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,7 +71,7 @@ namespace VitrineProdutos.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ProdutoDescricao")
-                        .HasColumnType("nvarchar(1000)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("ProdutoNome")
                         .IsRequired()

@@ -101,15 +101,12 @@ namespace VitrineProdutos.Controllers
         [Authorize]
         public async Task<ActionResult<Foto>> PostFoto([FromForm] Foto foto)
         {
-            // var a = foto;
             foto.ImageName = await SaveImage(foto.ImageFile);
-           // foto.ImageName = "teste cors";
             foto.Position = nextFoto(foto.ProdutoId);
             _context.Fotos.Add(foto);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetFoto", new { id = foto.FotoId }, foto);
-            //return NoContent();
         }
 
         // DELETE: api/Fotos/5

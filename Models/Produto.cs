@@ -18,18 +18,18 @@ namespace VitrineProdutos.Models
         [Key]
         public int ProdutoId { get; set; }
 
-        [Column(TypeName = "nvarchar(50)")]
+        [Column(TypeName = "nvarchar(200)")]
         [Required]
         public string  ProdutoNome { get; set; }
 
-        [Column(TypeName = "nvarchar(200)")]
+        [Column(TypeName = "nvarchar(1000)")]
         public string ProdutoDescricao { get; set; }
         
         [Required]
         public decimal ProdutoValor { get; set; }
 
         [Column(TypeName = "decimal(10,2)")]
-        public decimal ProdutoValorAntigo { get; set; }
+        public decimal? ProdutoValorAntigo { get; set; }
 
 
         public virtual ICollection<ProdutoCategoria> ProdutoCategorias { get; set; }
@@ -44,7 +44,6 @@ namespace VitrineProdutos.Models
         [NotMapped]
         public int QtdTotalItens { get; set; }
 
-        //[NotMapped]
-        //public virtual ICollection<Categoria> Categorias { get; set; }
+
     }
 }

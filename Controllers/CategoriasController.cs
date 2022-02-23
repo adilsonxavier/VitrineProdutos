@@ -25,7 +25,7 @@ namespace VitrineProdutos.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Categoria>>> GetCategorias()
         {
-            return await _context.Categorias.ToListAsync();
+            return await _context.Categorias.OrderBy(x=>x.CategoriaNome).ToListAsync();
         }
 
         // GET: api/Categorias/5
@@ -128,24 +128,12 @@ namespace VitrineProdutos.Controllers
         //[Authorize]
         public async Task<ActionResult<IEnumerable<Categoria>>> GetCategoriasProduto(int id)
         {
-            /* return await _context.CategoriaProdutos
-                .Where(x=> x.ProdutoId == id)
-                .Select(x =>new CategoriaProduto {
-                     CategoriaId = x.CategoriaId,
-                     ProdutoId = x.ProdutoId,
-                     CategoriaName = _context.Categorias.FirstOrDefault(s => s.CategoriaId == x.CategoriaId).CategoriaName
-                     //CategoriaName = (from s in _context.Categorias where s.CategoriaId == x.CategoriaId select s.CategoriaName).FirstOrDefault()
-
-                  })
-                 .ToListAsync();
-            */
 
             return await _context.Categorias
                 .Select(x => new Categoria
                 {
                     CategoriaId = x.CategoriaId,
                     CategoriaNome = x.CategoriaNome,
-                    // Checked = _context.CategoriaProdutos.FirstOrDefault(se => se.ProdutoId == id && se.CategoriaId == x.CategoriaId)!= null ? true : false
                     Checked = (from se in _context.ProdutoCategorias where se.ProdutoId == id && se.CategoriaId == x.CategoriaId select se).Any() //? true : false
                 })
 

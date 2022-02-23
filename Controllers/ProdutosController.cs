@@ -61,6 +61,7 @@ namespace VitrineProdutos.Controllers
                     ProdutoId = x.ProdutoId,
                     ProdutoNome = x.ProdutoNome,
                     ProdutoValor = x.ProdutoValor,
+                    ProdutoValorAntigo = x.ProdutoValorAntigo == null ? 0 : x.ProdutoValorAntigo,
                     ProdutoDescricao = x.ProdutoDescricao,
                     //O Request.PathBase retorna "". Ele e usado para quando é configurado um nome adicional no Startup.Configure
                     //Adding app.usePathBase("/mysite1") one needs to call /mysite1/api/items instead of /api/items
@@ -114,6 +115,7 @@ namespace VitrineProdutos.Controllers
         [Authorize]
         public async Task<IActionResult> PutProdutos(int id, [FromForm] Produto produto)
         {
+
             if (id != produto.ProdutoId)
             {
                 return BadRequest();
@@ -131,8 +133,9 @@ namespace VitrineProdutos.Controllers
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
+                string erro = ex.Message;
                 if (!ProdutosExists(id))
                 {
                     return NotFound();
@@ -143,6 +146,7 @@ namespace VitrineProdutos.Controllers
                 }
             }
 
+
             return NoContent();
         }
 
@@ -152,9 +156,15 @@ namespace VitrineProdutos.Controllers
         [Authorize]
         public async Task<ActionResult<Produto>> PostProdutos([FromForm] Produto produto) // Com o fromform no postman tem que usar form-data
         {
-           
+
             _context.Produtos.Add(produto);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+            }catch(Exception ex)
+            {
+                string erro = ex.Message;
+            }
 
 
             //return StatusCode(201);
@@ -198,8 +208,9 @@ namespace VitrineProdutos.Controllers
         }
 
         [NonAction]
+       
         // public string SaveImage(IFormFile imageFile, HttpContext httpContext)
-        // Ao invéz de receber o parânetro httpContext o autor achou melhor usar um objeto IWebHostEnvironment que foi injetado 
+        // Ao invéz de receber o parânetro httpContext , soi usado um objeto IWebHostEnvironment que foi injetado 
         // com injeção de dependência no construtor
         public async Task<string> SaveImage(IFormFile imageFile)
         {

@@ -16,9 +16,16 @@ A aplicação tem uma área de usuário que permite pesquisar e visualizar os pr
 ![Mobile 1](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/tela1p.png) ![Mobile 2](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/tela2p.png))![Mobile 1](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/tela3p.png) ![Mobile 2](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/tela4p.png))
 
 ## Layout web
-![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
+![Web 1](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/web2.png)
 
-![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
+![Web 2](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/web1.png)
+
+![Web 2](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/web3.png)
+
+![Web 2](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/web4.png)
+
+![Web 2](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/web5.png)
+
 
 ## Modelo conceitual
 ![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)

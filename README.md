@@ -1,13 +1,14 @@
-# Big Game Survey 
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/neliocursos/exemplo-readme/blob/main/LICENSE) 
+# Vitrine de Produtos
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/adilsonxavier/VitrineProdutos/blob/main/LICENSE) 
 
 # Sobre o projeto
 
-https://wmazoni-sds1.netlify.app
+http://adilsonxdesouza.somee.com/
 
-Big Game Survey é uma aplicação full stack web e mobile construída durante a 1ª edição da **Semana DevSuperior** (#sds1), evento organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
+Vitrine de Produtos é uma aplicação full stack web e mobile simples mas bem completa que fiz com o intuito de mesclar diversos conhecimentos que eu  ja tinha com outros que me aprofundei mais recentemente (especialmente ECMAScript 6 e Reac.js).
+Por se tratar de um projeto com o objetivo principal de aprendizado, não quis usar um framework como o Bootstrap e criei todo o css do zero deixando a aplicação totalmente responsiva.
+A aplicação tem uma área de usuário que permite pesquisar e visualizar os produtos cadastrados com tela de detalhe do produto com carrosssel de fotos. Possui uma área administrativa pra cadastro de produtos e suas categorias ( usando relacionamento muitos-pra-muitos ) e upload de diversas fotos para cada produto.
 
-A aplicação consiste em uma pesquisa de preferência de games, onde os dados são coletados no app mobile, e depois são listados no app web, que também apresenta um dashboard com gráficos baseados nestes dados.
 
 ## Layout mobile
 ![Mobile 1](https://github.com/acenelio/assets/raw/main/sds1/mobile1.png) ![Mobile 2](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)

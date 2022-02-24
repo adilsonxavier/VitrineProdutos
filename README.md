@@ -13,7 +13,7 @@ A aplicação tem uma área de usuário que permite pesquisar e visualizar os pr
 
 
 ## Layout mobile
-![Mobile 1](https://github.com/acenelio/assets/raw/main/sds1/mobile1.png) ![Mobile 2](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)
+![Mobile 1](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/tela1p.png) ![Mobile 2](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/tela2p.png))![Mobile 1](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/tela3p.png) ![Mobile 2](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/tela4p.png))
 
 ## Layout web
 ![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)

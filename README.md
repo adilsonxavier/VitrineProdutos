@@ -27,62 +27,26 @@ A aplicação tem uma área de usuário que permite pesquisar e visualizar os pr
 ![Web 2](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/web5.png)
 
 
-## Modelo conceitual
-![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
+## Diagrama do Banco de Dados
+![Modelo Conceitual](https://github.com/adilsonxavier/VitrineProdutos_Front/blob/main/assets/bd.png)
 
 # Tecnologias utilizadas
 ## Back end
-- Java
-- Spring Boot
-- JPA / Hibernate
-- Maven
+- C# (.net 5)
+- Entity Framework Core 5
+- JWT Authentication
 ## Front end
-- HTML / CSS / JS / TypeScript
+- HTML / CSS / JS 
 - ReactJS
-- React Native
-- Apex Charts
-- Expo
+
 ## Implantação em produção
-- Back end: Heroku
-- Front end web: Netlify
-- Banco de dados: Postgresql
+- Back end: http://adilsonxavier-001-site1.itempurl.com/api/ (https://www.smarterasp.net/)
+- Front end web: http://adilsonxdesouza.somee.com/
+- Banco de dados: SQL Server
 
-# Como executar o projeto
-
-## Back end
-Pré-requisitos: Java 11
-
-```bash
-# clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
-
-# entrar na pasta do projeto back end
-cd backend
-
-# executar o projeto
-./mvnw spring-boot:run
-```
-
-## Front end web
-Pré-requisitos: npm / yarn
-
-```bash
-# clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
-
-# entrar na pasta do projeto front end web
-cd front-web
-
-# instalar dependências
-yarn install
-
-# executar o projeto
-yarn start
-```
 
 # Autor
 
-Wellington Mazoni de Andrade
-
-https://www.linkedin.com/in/wmazoni
+Adilson Xavier de Souza
+https://www.linkedin.com/in/adilson-xavier-0895b624/
 

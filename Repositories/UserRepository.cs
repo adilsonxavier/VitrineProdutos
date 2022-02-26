@@ -12,8 +12,8 @@ namespace VitrineProdutos.Repositories
         {
             var users = new List<User>();
 
-            users.Add(new User() { Id = 1, Name = "adilson", Password = "123456", Role = "management" }); ;
-            users.Add(new User() { Id = 2, Name = "maysa", Password = "123456", Role = "employee" }); ;
+            users.Add(new User() { Id = 1, Name = "adilson", Password = "henrique123", Role = "management" }); ;
+            users.Add(new User() { Id = 2, Name = "maysa", Password = "henrique123", Role = "employee" }); ;
 
             return users.Where(x => x.Name.ToLower() == userName.ToLower() && x.Password.ToLower() == password.ToLower())
                 .FirstOrDefault();
